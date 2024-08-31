@@ -7,7 +7,7 @@ import guardaroupa from '../../../assets/guarda-roupa.svg';
 import higiene from '../../../assets/artigos-de-higiene-pessoal.svg';
 import profile from '../../../assets/profile_16509786.svg';
 import water from '../../../assets/soft-drinks_4135327.svg';
-import { Container, Title, Description, BackButton, AddressText, PhoneText } from './styles';
+import { Container, Title, Description, BackButton, AddressText, PhoneText, ContainerTitle } from './styles';
 import Header from '../../../components/header';
 import CardList from '../../../components/cardList';
 
@@ -53,6 +53,8 @@ export function IgrejaPage() {
       <BackButton onClick={() => navigate(-1)}>
         <FaArrowLeft /> Voltar
       </BackButton>
+      <ContainerTitle>
+
       <Title>{title}</Title>
       <Description>{description}</Description>
       <AddressText>Endereço: {address}</AddressText>
@@ -60,6 +62,7 @@ export function IgrejaPage() {
       
       {/* Usando o novo componente CardList */}
       <CardList cards={cards} />
+      </ContainerTitle>
     </Container>
   );
 }

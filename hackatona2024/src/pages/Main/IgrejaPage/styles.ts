@@ -6,12 +6,18 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
+export const ContainerTitle = styled.h1`
+  font-size: 2rem;
+  color: #2e312f;
+  margin-bottom: 7px;
+  margin-top: 90px;
+`;
 
 export const Title = styled.h1`
   font-size: 2rem;
   color: #2e312f;
   margin-bottom: 7px;
-  margin-top: 90px;
+  margin-top: 50px;
 `;
 
 export const Description = styled.p`

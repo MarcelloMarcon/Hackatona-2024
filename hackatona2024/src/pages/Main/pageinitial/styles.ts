@@ -40,6 +40,7 @@ export const CardsContainer = styled.div`
   flex: 1; 
   align-items: end;
   margin-top: 50px;
+  margin-bottom: 50px;
 
   /* Media query para dispositivos móveis */
   @media (max-width: 768px) {
