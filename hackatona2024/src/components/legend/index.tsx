@@ -8,7 +8,7 @@ const LegendContainer = styled.div`
   align-items: start;
   margin-top: 25px;
   padding: 10px;
-  padding-left: 150px;
+  padding-left: 8rem;
   width: 70%;
   flex-direction: column;
   gap: 10px;
