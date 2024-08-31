@@ -5,7 +5,7 @@ export const ButtonContainer = styled.button`
   align-items: center;
   width: 80%;
   padding: 16px;
-  border: 1px solid #0C0D0F;
+  border: 2px solid #9A9A9A;
   border-radius: 8px;
   background-color: #f9f9f9;
   cursor: pointer;
@@ -17,7 +17,7 @@ export const ButtonContainer = styled.button`
 
   &:focus {
     outline: none;
-    border-color: #333;
+    border-color: #9A9A9A;
   }
 `;
 

@@ -38,7 +38,7 @@ export default function PageInitial() {
 
   // Função para navegar para a página da igreja com dados
   const handleNavigation = (title: string, description: string, counts: number[]) => {
-    navigate('/igreja', { state: { title, description, counts } });
+    navigate('/abrigos', { state: { title, description, counts } });
   };
 
   return (

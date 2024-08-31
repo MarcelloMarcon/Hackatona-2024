@@ -1,28 +1,31 @@
 // IgrejaPage.tsx
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 import colher from '../../../assets/colher.svg';
 import guardaroupa from '../../../assets/guarda-roupa.svg';
 import higiene from '../../../assets/artigos-de-higiene-pessoal.svg';
 import profile from '../../../assets/profile_16509786.svg';
 import water from '../../../assets/soft-drinks_4135327.svg';
-import { Container, Title, Description, CardsContainer, Card, CardImage, CardTitle } from './styles';
+import { Container, Title, Description, CardsContainer, Card, CardImage, CardTitle, CardDescription, CardDescriptionTitle, CardDescriptionBody, BackButton } from './styles';
+import Header from '../../../components/header';
 
 // Definindo uma interface para as props
 interface IgrejaPageProps {
   title: string;
   description: string;
-  counts: number[]; // Adicionando a propriedade counts
+  counts: number[];
 }
 
 // Interface para os dados do card
 interface CardProps {
   imageUrl: string;
   title: string;
-  count: number; // Adicionando a propriedade count
+  count: number;
 }
 
 export function IgrejaPage() {
+  const navigate = useNavigate();
   const location = useLocation();
   const { title, description, counts } = (location.state as IgrejaPageProps) || { title: 'Default Title', description: 'Default Description', counts: [0, 0, 0, 0, 0] };
 
@@ -37,6 +40,10 @@ export function IgrejaPage() {
 
   return (
     <Container>
+      <Header />
+      <BackButton onClick={() => navigate(-1)}>
+        <FaArrowLeft /> Voltar
+      </BackButton>
       <Title>{title}</Title>
       <Description>{description}</Description>
       
@@ -46,6 +53,46 @@ export function IgrejaPage() {
           <Card key={index} count={card.count}>
             <CardImage src={card.imageUrl} alt={card.title} />
             <CardTitle>{card.title}</CardTitle>
+            {card.title === 'Alimentos' && (
+              <CardDescription>
+                <CardDescriptionTitle>Priorize alimentos não perecíveis</CardDescriptionTitle>
+                <CardDescriptionBody>
+                  Arroz<br />
+                  Feijão<br />
+                  Leite em pó<br />
+                  Óleo<br />
+                  Papinha para nenéns<br />
+                  Açúcar
+                </CardDescriptionBody>
+              </CardDescription>
+            )}
+            {card.title === 'Roupas' && (
+              <CardDescription>
+                <CardDescriptionTitle>Doe roupa em bom estado e em diversos tamanhos</CardDescriptionTitle>
+                <CardDescriptionBody>
+                  Casacos e jaquetas<br />
+                  Sapatos<br />
+                  Acessórios (cinto, bolsas, etc)<br />
+                  Calças<br />
+                  Camisetas<br />
+                  Roupas Infantis
+                </CardDescriptionBody>
+              </CardDescription>
+            )}
+            {card.title === 'Materiais de Higiene' && (
+              <CardDescription>
+                <CardDescriptionTitle>Doação não é descarte</CardDescriptionTitle>
+                <CardDescriptionBody>
+                  Sabonete<br />
+                  Pasta de dente<br />
+                  Escova de dente <br />
+                  Shampoo<br />
+                  Absorvente <br />
+                  Desodorante<br />
+                  Papel Higiênico
+                </CardDescriptionBody>
+              </CardDescription>
+            )}
           </Card>
         ))}
       </CardsContainer>

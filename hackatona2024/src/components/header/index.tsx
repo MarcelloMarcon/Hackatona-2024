@@ -1,58 +1,31 @@
+// Header.tsx
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { FaSignOutAlt } from 'react-icons/fa'; // Importa o ícone de logout
 import logo from '../../assets/logo.png'; // Substitua com o caminho real para seu logo
+import { HeaderContainer, LogoContainer, Logo, Text, LogoutButton } from './styles';
 
 const Header: React.FC = () => {
+  const navigate = useNavigate();
+
+  // Função para lidar com o logout
+  const handleLogout = () => {
+    navigate('/'); // Redireciona para a página Main
+  };
+
   return (
-    <header style={styles.header}>
-      {/* Logo do lado esquerdo */}
-      <div style={styles.logoContainer}>
-        <img src={logo} alt="Logo" style={styles.logo} />
-      </div>
-
-    </header>
+    <HeaderContainer>
+      {/* Logo e texto do lado esquerdo */}
+      <LogoContainer>
+        <Logo src={logo} alt="Logo" />
+        <Text>Tech Solidária</Text> {/* Texto ao lado da logo */}
+      </LogoContainer>
+      {/* Botão de Logout do lado direito */}
+      <LogoutButton onClick={handleLogout}>
+        <FaSignOutAlt /> {/* Ícone de logout */}
+      </LogoutButton>
+    </HeaderContainer>
   );
-};
-
-// Estilos inline para o componente
-const styles = {
-  header: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'left',
-    padding: '10px 20px',
-    backgroundColor: '#333',
-    color: '#fff',
-    position: 'fixed',
-    width: '100%',
-    top: 0,
-    zIndex: 1000,
-  } as React.CSSProperties,
-  logoContainer: {
-  } as React.CSSProperties,
-  logo: {
-    height: '40px',
-  } as React.CSSProperties,
-  nav: {
-    flex: '2 0 auto',
-    textAlign: 'right',
-  } as React.CSSProperties,
-  navList: {
-    listStyleType: 'none',
-    margin: 0,
-    padding: 0,
-    display: 'flex',
-    gap: '20px',
-  } as React.CSSProperties,
-  navItem: {
-    margin: '0 10px',
-  } as React.CSSProperties,
-  navLink: {
-    color: '#fff',
-    textDecoration: 'none',
-    fontWeight: 'bold',
-    fontSize: '16px',
-    transition: 'color 0.3s ease',
-  } as React.CSSProperties,
 };
 
 export default Header;
