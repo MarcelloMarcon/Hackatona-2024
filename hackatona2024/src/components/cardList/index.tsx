@@ -71,7 +71,7 @@ const CardList: React.FC<CardListProps> = ({ cards }) => {
               <CardDescriptionTitle>Doação de Água</CardDescriptionTitle>
               <CardDescriptionBody>
                 Garrafas de água mineral<br/>
-                Água de 500 ml a 1,5 litros<br/>
+                Água de 500 ml a 1,5 litros<br />
                 Água com prazo de validade adequado<br/>
                 Garrafas lacradas e sem danos<br/>
               </CardDescriptionBody>
