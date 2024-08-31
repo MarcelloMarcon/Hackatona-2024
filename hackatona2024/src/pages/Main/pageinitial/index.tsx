@@ -23,21 +23,27 @@ export default function PageInitial() {
       <CardsContainer>
         <AddressCard
           icon={<FaHome />}
-          title={'Igreja João Banana'}
-          subtitle={'Rua Dom Pedro Primeiro 1022, Canoas RS'}
-          onClick={() => handleNavigation('Igreja João Banana', 'Bem-vindo à Igreja João Banana')}
+          title={'Paróquia Santo Antônio do Partenon'}
+          subtitle={'Rua Luiz de Camões, 35'}
+          onClick={() => handleNavigation('Paróquia Santo Antônio do Partenon', 'Bem-vindo à Paróquia Santo Antônio do Partenon')}
         />
         <AddressCard
           icon={<FaHome />}
-          title={'Igreja São Pedro'}
-          subtitle={'Avenida São Pedro 200, Porto Alegre RS'}
-          onClick={() => handleNavigation('Igreja São Pedro', 'Bem-vindo à Igreja São Pedro')}
+          title={'Igreja Brasa'}
+          subtitle={'Av. Dr. Carlos Barbosa, 80'}
+          onClick={() => handleNavigation('Igreja Brasa', 'Bem-vindo à Igreja Brasa')}
         />
         <AddressCard
           icon={<FaHome />}
-          title={'Igreja Nossa Senhora'}
-          subtitle={'Rua Dom Pedro Primeiro 1022, Canoas RS'}
-          onClick={() => handleNavigation('Igreja Nossa Senhora', 'Bem-vindo à Igreja Nossa Senhora')}
+          title={'Paróquia Nossa Senhora de Lourdes'}
+          subtitle={'Rua General Caldwell, 1022'}
+          onClick={() => handleNavigation('Paróquia Nossa Senhora de Lourdes', 'Bem-vindo à Paróquia Nossa Senhora de Lourdes')}
+        />
+        <AddressCard
+          icon={<FaHome />}
+          title={'Centro Estadual de Treinamento Esportivo'}
+          subtitle={'Rua Gonçalves Dias, 700'}
+          onClick={() => handleNavigation('Centro Estadual de Treinamento Esportivo', 'Bem-vindo à Paróquia Nossa Senhora de Lourdes')}
         />
       </CardsContainer>
     </Container>
