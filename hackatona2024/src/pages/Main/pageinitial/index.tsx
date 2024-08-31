@@ -73,6 +73,16 @@ export default function PageInitial() {
       cardDescription: 'Clube e eventos.',
       coordinates: { lat: -30.03425, lng: -51.18137 }
     },
+    {
+      title: 'Colégio Marista Rosário',
+      description: 'Bem-vindo ao Colégio Rosário',
+      subtitle: 'Praça Dom Sebastião, 2 ',
+      counts: [7, 22, 40, 70, 15],
+      address: 'Praça Dom Sebastião, 2',
+      phone: '(51) 3656-3423',
+      cardDescription: 'Colégio Marista.',
+      coordinates: { lat: -30.02998, lng: -51.21862 }
+    },
   ];
 
   // Função para navegar para a página da igreja com dados
