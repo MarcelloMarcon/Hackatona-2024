@@ -52,7 +52,26 @@ export default function PageInitial() {
       phone: '(51) 3456-7890',
       cardDescription: 'Facilidades esportivas e eventos comunitários.',
       coordinates: { lat: -30.0563519, lng: -51.2196615 }
-
+    },
+    {
+      title: 'Sogipa',
+      description: 'Bem-vindo ao Centro Estadual de Treinamento Esportivo',
+      subtitle: 'R. Barão do Cotegipe, 415 ',
+      counts: [7, 22, 40, 70, 15],
+      address: 'R. Barão do Cotegipe, 415',
+      phone: '(51) 3656-3423',
+      cardDescription: 'Facilidades esportivas e eventos comunitários.',
+      coordinates: { lat: -30.01006, lng: -51.19059 }
+    },
+    {
+      title: 'Grêmio Náutico União',
+      description: 'Bem-vindo ao Grêmio Náutico União',
+      subtitle: 'Rua Quintino Bocaiúva, 500 ',
+      counts: [7, 22, 40, 70, 15],
+      address: 'Rua Quintino Bocaiúva, 500',
+      phone: '(51) 3656-3423',
+      cardDescription: 'Clube e eventos.',
+      coordinates: { lat: -30.03425, lng: -51.18137 }
     },
   ];
 
