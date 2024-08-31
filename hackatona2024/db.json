@@ -1,0 +1,201 @@
+{
+    "xis": [
+      {
+        "id": 1,
+        "nome_abrigo": "Paróquia Santo Antônio do Partenon",
+        "endereco": "Rua Luiz de Camões, 35",
+        "telefone": "(51)9 9999-9999",
+        "precisa_voluntarios": 1,
+        "precisa_roupas": 1,
+        "precisa_agua": 0,
+        "precisa_prod_higiene": 0,
+        "precisa_alimentos": 0
+      },
+      {
+        "id": 2,
+        "nome_abrigo": "Igreja Brasa",
+        "endereco": "Av. Dr. Carlos Barbosa, 80",
+        "telefone": "(51)9 9999-9999",
+        "precisa_voluntarios": 1,
+        "precisa_roupas": 0,
+        "precisa_agua": 0,
+        "precisa_prod_higiene": 1,
+        "precisa_alimentos": 0
+      },
+      {
+        "id": 3,
+        "nome_abrigo": "xis",
+        "endereco": "Xis Salada",
+        "telefone": "O xis salada recheado com 180g de carne suculenta, queijo, alface, tomate.",
+        "precisa_voluntarios": 25.5,
+        "precisa_roupas": "https://i.imgur.com/CJj9pHh.jpeg",
+        "precisa_agua": "https://i.imgur.com/CJj9pHh.jpeg",
+        "precisa_prod_higiene": "https://i.imgur.com/CJj9pHh.jpeg",
+        "precisa_alimentos": "https://i.imgur.com/CJj9pHh.jpeg"
+      },
+      {
+        "id": 4,
+        "nome_abrigo": "xis",
+        "endereco": "Xis Salada",
+        "telefone": "O xis salada recheado com 180g de carne suculenta, queijo, alface, tomate.",
+        "precisa_voluntarios": 25.5,
+        "precisa_roupas": "https://i.imgur.com/CJj9pHh.jpeg",
+        "precisa_agua": "https://i.imgur.com/CJj9pHh.jpeg",
+        "precisa_prod_higiene": "https://i.imgur.com/CJj9pHh.jpeg",
+        "precisa_alimentos": "https://i.imgur.com/CJj9pHh.jpeg"
+      }
+    ],
+  
+    "bokaos": [
+      {
+        "id": 1,
+        "snack": "bokao",
+        "name": "Calabresa",
+        "description": "bokao recheada com calabresa, cebola, mussarela, orégano e azeitona, tendo uma borda recheada com catupiry.",
+        "price": 25,
+        "image": "https://i.imgur.com/5rjJGkV.jpg"
+      },
+      {
+        "id": 2,
+        "snack": "bokao",
+        "name": "Portuguesa",
+        "description": "bokao recheada com presunto, mussarela, ovo, cebola, azeitona, orégano, tomate e molho de tomate, tendo uma borda recheada com catupiry.",
+        "price": 28.5,
+        "image": "https://i.imgur.com/WCoyGoI.png"
+      },
+      {
+        "id": 3,
+        "snack": "bokao",
+        "name": "Frango com Catupiry",
+        "description": "bokao recheada com frango, catupiry e brócolis, tendo uma borda recheada com catupiry.",
+        "price": 24,
+        "image": "https://i.imgur.com/BuXrO8d.jpg"
+      },
+      {
+        "id": 4,
+        "snack": "bokao",
+        "name": "Napolitana",
+        "description": "bokao recheada com queijo, mussarela, tomate e couve, tendo uma borda recheada com catupiry.",
+        "price": 30,
+        "image": "https://i.imgur.com/u3DfvCE.jpg"
+      },
+      {
+        "id": 5,
+        "snack": "bokao",
+        "name": "Mussarela",
+        "description": "bokao recheada com mussarela, tendo uma borda recheada com catupiry. ",
+        "price": 20.5,
+        "image": "https://i.imgur.com/kPNXpa0.jpg"
+      },
+      {
+        "id": 6,
+        "snack": "bokao",
+        "name": "Marguerita",
+        "description": "bokao recheada com calabresa, mussarela, cebola, azeitona e orégano, tendo uma borda recheada com catupiry.",
+        "price": 25.5,
+        "image": "https://i.imgur.com/AsEfsZN.jpg"
+      },
+      {
+        "id": 7,
+        "snack": "bokao",
+        "name": "Brigadeiro com Morango",
+        "description": "bokao doce recheada com brigadeiro e morango.",
+        "price": 35.0,
+        "image": "https://i.imgur.com/43yC2Ap.jpg"
+      },
+      {
+        "id": 8,
+        "snack": "bokao",
+        "name": "Banana",
+        "description": "bokao doce recheada com banana e leite condensado.",
+        "price": 33.5,
+        "image": "https://i.imgur.com/Pcrgg1P.jpg"
+      },
+      {
+        "id": 9,
+        "snack": "bokao",
+        "name": "Chocolate",
+        "description": "bokao doce recheada com chocolate e bolinhas de chocolate.",
+        "price": 30,
+        "image": "https://i.imgur.com/RahAKkH.jpg"
+      }
+    ],
+  
+    "bebidas": [
+      {
+        "id": 1,
+        "snack": "bebida",
+        "name": "Coca-Cola 2L",
+        "description": "A tradicional Coca-Cola que a família brasileira adora.",
+        "price": 12,
+        "image": "https://i.imgur.com/Lg3aKhf.jpg"
+      },
+      {
+        "id": 2,
+        "snack": "bebida",
+        "name": "Guaraná Antarctica",
+        "description": "O irresistível e saboroso Guaraná Antarctica em sua versão de latinha.",
+        "price": 6.5,
+        "image": "https://i.imgur.com/hOBrOIm.jpg"
+      },
+      {
+        "id": 3,
+        "snack": "bebida",
+        "name": "Suco de Abacaxi",
+        "description": "Suco natural de abacaxi com leves incrementos de algumas hortaliças para fortificar sua saúde.",
+        "price": 8,
+        "image": "https://i.imgur.com/VV9qTMh.jpg"
+      },
+      {
+        "id": 4,
+        "snack": "bebida",
+        "name": "Suco de Laranja",
+        "description": "Suco natural de laranja para você que é amante dessa fruta.",
+        "price": 8,
+        "image": "https://i.imgur.com/2Lf2gHy.jpg"
+      }
+    ],
+  
+    "tabuas": [
+      {
+        "id": 1,
+        "snack": "tabua",
+        "name": "Casquinha",
+        "description": "A casquinha crocante e saborosa que nossos clientes amam.",
+        "price": 4.5,
+        "image": "https://i.imgur.com/YGmeoCm.jpg"
+      },
+      {
+        "id": 2,
+        "snack": "tabua",
+        "name": "Chocolate com granulado",
+        "description": "Sorvete de chocolate com granulados em chocolate para você se deliciar.",
+        "price": 6,
+        "image": "https://i.imgur.com/osAHOLe.jpg"
+      },
+      {
+        "id": 3,
+        "snack": "tabua",
+        "name": "Flocos",
+        "description": "O tradicional flocos vem com cobertura em chocolate para adocicar seu dia.",
+        "price": 7,
+        "image": "https://i.imgur.com/qgnFLiy.jpg"
+      },
+      {
+        "id": 4,
+        "snack": "tabua",
+        "name": "Creme",
+        "description": "O simples sorvete de creme com um gosto irresistível.",
+        "price": 6.5,
+        "image": "https://i.imgur.com/dFLysrT.jpg"
+      },
+      {
+        "id": 5,
+        "snack": "tabua",
+        "name": "Morango",
+        "description": "O clássico sorvete de morango que deixe tudo mais leve.",
+        "price": 10,
+        "image": "https://i.imgur.com/0TWnEI7.jpg"
+      }
+    ]
+  }
