@@ -19,11 +19,17 @@ const Main = () => {
   // Função para obter coordenadas a partir do CEP
   const fetchCoordinates = async (cep: string) => {
     try {
-      const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${cep},BR`);
+      const response = await fetch(`https://cep.awesomeapi.com.br/json/${cep}`);
       const data = await response.json();
-      if (data.length > 0) {
-        const { lat, lon } = data[0];
-        return { lat: parseFloat(lat), lon: parseFloat(lon) };
+
+      // Verifica se há um erro na resposta
+      if (data.status && data.status === 404) {
+        alert("CEP não encontrado. Tente novamente."); // Alerta para CEP não encontrado
+        return null;
+      }
+      if (data.lat && data.lng) {
+        const { lat, lng } = data;
+        return { lat: parseFloat(lat), lng: parseFloat(lng) };
       } else {
         alert("CEP não encontrado. Tente novamente."); // Alerta para CEP não encontrado
         return null;

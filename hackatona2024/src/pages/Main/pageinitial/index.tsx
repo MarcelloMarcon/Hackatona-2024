@@ -21,7 +21,7 @@ export default function PageInitial() {
       address: 'Rua Luiz de Camões, 35',
       phone: '(51) 1234-5678',
       cardDescription: 'Este é um local histórico com uma comunidade vibrante.',
-      coordinates: { lat: -30.0581612, lon: -51.2015326 } // Adiciona coordenadas para calcular a distância
+      coordinates: { lat: -30.0581612, lng: -51.2015326 } // Adiciona coordenadas para calcular a distância
     },
     {
       title: 'Igreja Brasa',
@@ -31,7 +31,7 @@ export default function PageInitial() {
       address: 'Av. Dr. Carlos Barbosa, 80',
       phone: '(51) 8765-4321',
       cardDescription: 'Um espaço acolhedor para todos.',
-      coordinates: { lat: -30.038, lon: -51.226 }
+      coordinates: { lat: -30.038, lng: -51.226 }
     },
     {
       title: 'Paróquia Nossa Senhora de Lourdes',
@@ -41,7 +41,7 @@ export default function PageInitial() {
       address: 'Rua General Caldwell, 1022',
       phone: '(51) 2345-6789',
       cardDescription: 'Conhecida por suas atividades sociais.',
-      coordinates: { lat: -30.0611547, lon: -51.2172564 }
+      coordinates: { lat: -30.0611547, lng: -51.2172564 }
     },
     {
       title: 'Centro Estadual de Treinamento Esportivo',
@@ -51,7 +51,7 @@ export default function PageInitial() {
       address: 'Rua Gonçalves Dias, 700',
       phone: '(51) 3456-7890',
       cardDescription: 'Facilidades esportivas e eventos comunitários.',
-      coordinates: { lat: -30.0563519, lon: -51.2196615 }
+      coordinates: { lat: -30.0563519, lng: -51.2196615 }
 
     },
   ];
