@@ -9,11 +9,32 @@ const Main = () => {
   const navigate = useNavigate();
 
   const handleCepChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    let value = event.target.value.replace(/\D/g, ''); // Remove tudo que não é dígito
-    if (value.length > 5) {
-      value = value.replace(/^(\d{5})(\d)/, '$1-$2'); // Adiciona o hífen depois do quinto dígito
+    const value = event.target.value.replace(/\D/g, ''); // Remove qualquer caractere que não seja número
+    if (value.length <= 8) {
+      setCep(value.replace(/(\d{5})(\d)/, '$1-$2')); // Adiciona a máscara para o CEP
     }
-    setCep(value);
+  };
+
+  // Função para validar o formato do CEP
+  const isValidCep = (cep: string) => {
+    const cepRegex = /^[0-9]{5}-[0-9]{3}$/; // Ajusta para o formato xxxxx-xxx
+    return cepRegex.test(cep);
+  };
+
+  // Função para verificar se o CEP existe usando uma API externa
+  const checkCepExists = async (cep: string) => {
+    try {
+      const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+      const data = await response.json();
+      if (data.erro) {
+        return false; // CEP não existe
+      }
+      return true; // CEP existe
+    } catch (error) {
+      console.error("Erro ao verificar o CEP:", error);
+      alert("Erro ao verificar o CEP. Tente novamente.");
+      return false;
+    }
   };
 
   // Função para obter coordenadas a partir do CEP
@@ -31,12 +52,12 @@ const Main = () => {
         const { lat, lng } = data;
         return { lat: parseFloat(lat), lng: parseFloat(lng) };
       } else {
-        alert("CEP não encontrado. Tente novamente."); // Alerta para CEP não encontrado
+        alert("CEP não encontrado. Tente novamente.");
         return null;
       }
     } catch (error) {
       console.error("Erro ao buscar coordenadas:", error);
-      alert("Erro ao buscar coordenadas. Tente novamente."); // Alerta para erro na requisição
+      alert("Erro ao buscar coordenadas. Tente novamente.");
       return null;
     }
   };
@@ -45,12 +66,17 @@ const Main = () => {
   const handleNavigation = async () => {
     if (cep.trim() === '') {
       window.alert('Por favor, insira o seu CEP antes de continuar.');
-    } else if (cep.length < 9) { // Valida se o CEP tem menos de 9 caracteres (XXXXX-XXX)
-      window.alert('O CEP deve ter 8 dígitos.');
+    } else if (!isValidCep(cep)) {
+      window.alert('Por favor, insira um CEP válido no formato XXXXX-XXX.');
     } else {
-      const coordinates = await fetchCoordinates(cep);
-      if (coordinates) {
-        navigate('/initial', { state: { userCoordinates: coordinates } }); // Passando as coordenadas para a próxima página
+      const cepExists = await checkCepExists(cep);
+      if (!cepExists) {
+        window.alert('CEP não encontrado. Tente novamente.');
+      } else {
+        const coordinates = await fetchCoordinates(cep);
+        if (coordinates) {
+          navigate('/initial', { state: { userCoordinates: coordinates } }); // Passando as coordenadas para a próxima página
+        }
       }
     }
   };
@@ -70,7 +96,7 @@ const Main = () => {
         value={cep}
         onChange={handleCepChange}
         placeholder="Digite seu CEP"
-        maxLength={9} // Define o tamanho máximo do input para 9 caracteres (XXXXX-XXX)
+        maxLength={9} // Limita o tamanho do input para o formato xxxxx-xxx
       />
       <ButtonContainer>
         <Button onClick={handleCep}>Não sei meu CEP</Button>
