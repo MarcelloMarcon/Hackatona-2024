@@ -6,7 +6,6 @@ export const Container = styled.div`
   text-align: center;
   margin-top: 50px;
   margin-right: 50px;
-  margin-left: 50px;
 
   gap: 20px; /* Espaço entre o mapa e os cards */
   align-items: flex-start; /* Alinha os itens ao topo */
@@ -16,6 +15,8 @@ export const MapContainer = styled.div`
   width: 50%; /* Define a largura do contêiner do mapa */
   height: 480px; /* Define a altura do contêiner do mapa */
   flex-shrink: 0; /* Impede o encolhimento do contêiner do mapa */
+  margin-left:50px;
+  margin-top: 50px;
 `
 
 export const CardsContainer = styled.div`
@@ -24,4 +25,5 @@ export const CardsContainer = styled.div`
   gap: 30px; 
   flex: 1; 
   align-items: end;
+  margin-top: 50px;
 `
