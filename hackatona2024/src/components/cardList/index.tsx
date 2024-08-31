@@ -59,6 +59,24 @@ const CardList: React.FC<CardListProps> = ({ cards }) => {
               </CardDescriptionBody>
             </CardDescription>
           )}
+          {card.title === 'Voluntários' && (
+            <CardDescription>
+              <CardDescriptionTitle>Não precisamos de voluntários nesse abrigo.</CardDescriptionTitle>
+              <CardDescriptionBody>
+              </CardDescriptionBody>
+            </CardDescription>
+          )}
+          {card.title === 'Águas' && (
+            <CardDescription>
+              <CardDescriptionTitle>Doação de Água</CardDescriptionTitle>
+              <CardDescriptionBody>
+                Garrafas de água mineral<br/>
+                Água de 500 ml a 1,5 litros<br/>
+                Água com prazo de validade adequado<br/>
+                Garrafas lacradas e sem danos<br/>
+              </CardDescriptionBody>
+            </CardDescription>
+          )}
         </Card>
       ))}
     </div>
