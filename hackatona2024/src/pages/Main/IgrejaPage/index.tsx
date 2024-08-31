@@ -10,17 +10,16 @@ import water from '../../../assets/soft-drinks_4135327.svg';
 import { Container, Title, Description, BackButton, AddressText, PhoneText, ContainerTitle } from './styles';
 import Header from '../../../components/header';
 import CardList from '../../../components/cardList';
+import Legend from '../../../components/legend'; // Importando o componente Legend
 
-// Atualizando a interface para incluir endereço e telefone
 interface IgrejaPageProps {
   title: string;
   description: string;
   counts: number[];
-  address: string;  // Novo campo para endereço
-  phone: string;    // Novo campo para número de celular
+  address: string;
+  phone: string;
 }
 
-// Interface para os dados do card
 interface CardProps {
   imageUrl: string;
   title: string;
@@ -38,13 +37,12 @@ export function IgrejaPage() {
     phone: '',
   };
 
-  // Exemplo de dados dos cards com a propriedade count
   const cards: CardProps[] = [
     { imageUrl: colher, title: 'Alimentos', count: counts[0] },
     { imageUrl: guardaroupa, title: 'Roupas', count: counts[1] },
     { imageUrl: higiene, title: 'Materiais de Higiene', count: counts[2] },
     { imageUrl: profile, title: 'Voluntários', count: counts[3] },
-    { imageUrl: water, title: 'Águas', count: counts[4] }
+    { imageUrl: water, title: 'Águas', count: counts[4] },
   ];
 
   return (
@@ -54,15 +52,15 @@ export function IgrejaPage() {
         <FaArrowLeft /> Voltar
       </BackButton>
       <ContainerTitle>
-
-      <Title>{title}</Title>
-      <Description>{description}</Description>
-      <AddressText>Endereço: {address}</AddressText>
-      <PhoneText>Telefone: {phone}</PhoneText>
-      
-      {/* Usando o novo componente CardList */}
-      <CardList cards={cards} />
+        <Title>{title}</Title>
+        <Description>{description}</Description>
+        <AddressText>Endereço: {address}</AddressText>
+        <PhoneText>Telefone: {phone}</PhoneText>
+        <CardList cards={cards} />
       </ContainerTitle>
+
+      {/* Adicionando o componente de legenda */}
+      <Legend />
     </Container>
   );
 }
