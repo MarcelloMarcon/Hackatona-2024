@@ -36,7 +36,7 @@ export const MapContainer = styled.div`
 export const CardsContainer = styled.div`
   display: flex;
   flex-direction: column; 
-  gap: 30px; 
+  gap: 15px; 
   flex: 1; 
   align-items: end;
   margin-top: 50px;

@@ -14,8 +14,8 @@ export default function PageInitial() {
   // Definindo dados de contagem, endereço, telefone e descrição para cada igreja
   const churches = [
     {
-      title: 'Paróquia Santo Antônio do Partenon',
-      description: 'Bem-vindo à Paróquia Santo Antônio do Partenon',
+      title: 'Paróquia Santo Antônio',
+      description: 'Bem-vindo à Paróquia Santo Antônio',
       subtitle: 'Rua Luiz de Camões, 35',
       counts: [5, 20, 30, 50, 10],
       address: 'Rua Luiz de Camões, 35',
