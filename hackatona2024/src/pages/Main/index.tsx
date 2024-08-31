@@ -1,42 +1,36 @@
-// Main.tsx
-import { Container, CardsContainer, MapContainer } from './styles';
-import { FaHome } from 'react-icons/fa';
+// DonationOrVolunteerPage.tsx
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AddressCard from '../../components/cards';
+import { Title, Input, ButtonContainer, Button, Container } from './styles';
 
-export default function Main() {
-  const navigate = useNavigate();
+const Main = () => {
+  const [cep, setCep] = useState('');
+  const navigate = useNavigate(); // Adicionando o hook useNavigate
 
-  // Adicione tipos explícitos para title e description
-  const handleNavigation = (title: string, description: string) => {
-    navigate('/igreja', { state: { title, description } });
+  const handleCepChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCep(event.target.value);
+  };
+
+  // Funções para navegação
+  const handleNavigation = () => {
+    navigate('/initial');
   };
 
   return (
     <Container>
-      <MapContainer>
-        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1kQ7ejTduJkj4iexvxij9JRza_6lt4eI&ehbc=2E312F" width="100%" height="100%"></iframe>
-      </MapContainer>
-      <CardsContainer>
-        <AddressCard
-          icon={<FaHome />}
-          title={'Igreja João Banana'}
-          subtitle={'Rua Dom Pedro Primeiro 1022, Canoas RS'}
-          onClick={() => handleNavigation('Igreja João Banana', 'Bem-vindo à Igreja João Banana')}
-        />
-        <AddressCard
-          icon={<FaHome />}
-          title={'Igreja São Pedro'}
-          subtitle={'Avenida São Pedro 200, Porto Alegre RS'}
-          onClick={() => handleNavigation('Igreja São Pedro', 'Bem-vindo à Igreja São Pedro')}
-        />
-        <AddressCard
-          icon={<FaHome />}
-          title={'Igreja Nossa Senhora'}
-          subtitle={'Rua Dom Pedro Primeiro 1022, Canoas RS'}
-          onClick={() => handleNavigation('Igreja Nossa Senhora', 'Bem-vindo à Igreja Nossa Senhora')}
-        />
-      </CardsContainer>
+      <Title>Insira seu CEP</Title>
+      <Input
+        type="text"
+        value={cep}
+        onChange={handleCepChange}
+        placeholder="Digite seu CEP"
+      />
+      <ButtonContainer>
+        <Button onClick={handleNavigation}>Quero fazer doação</Button>
+        <Button onClick={handleNavigation}>Quero voluntariar</Button>
+      </ButtonContainer>
     </Container>
   );
-}
+};
+
+export default Main;

@@ -1,27 +1,57 @@
-import styled from 'styled-components'
+
+// DonationOrVolunteerPage.styles.ts
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: row; /* Define os elementos lado a lado */
-  text-align: center;
-  margin-top: 50px;
-  margin-right: 50px;
-  margin-left: 50px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+`;
 
-  gap: 20px; /* Espaço entre o mapa e os cards */
-  align-items: flex-start; /* Alinha os itens ao topo */
-`
+export const Title = styled.h1`
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+`;
 
-export const MapContainer = styled.div`
-  width: 50%; /* Define a largura do contêiner do mapa */
-  height: 480px; /* Define a altura do contêiner do mapa */
-  flex-shrink: 0; /* Impede o encolhimento do contêiner do mapa */
-`
+export const Input = styled.input`
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 300px;
+`;
 
-export const CardsContainer = styled.div`
+export const ButtonContainer = styled.div`
   display: flex;
-  flex-direction: column; 
-  gap: 30px; 
-  flex: 1; 
-  align-items: end;
-`
+  gap: 10px;
+`;
+
+export const Button = styled.button`
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #0053ba;
+    color: white;
+  }
+
+  &:first-of-type {
+    background-color: #007bff;
+    color: white;
+  }
+
+  &:last-of-type {
+    background-color: #28a745;
+    color: white;
+  }
+`;
+
