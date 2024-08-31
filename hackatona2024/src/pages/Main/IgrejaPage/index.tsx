@@ -1,52 +1,55 @@
 // IgrejaPage.tsx
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import colher from '../../../assets/colher.png';
-import guardaroupa from '../../../assets/guarda-roupa.png';
-import higiene from '../../../assets/artigos-de-higiene-pessoal.png';
-import profile from '../../../assets/profile_16509786.png';
-import water from '../../../assets/soft-drinks_4135327.png';
+import colher from '../../../assets/colher.svg';
+import guardaroupa from '../../../assets/guarda-roupa.svg';
+import higiene from '../../../assets/artigos-de-higiene-pessoal.svg';
+import profile from '../../../assets/profile_16509786.svg';
+import water from '../../../assets/soft-drinks_4135327.svg';
+import { Container, Title, Description, CardsContainer, Card, CardImage, CardTitle } from './styles';
 
 // Definindo uma interface para as props
 interface IgrejaPageProps {
   title: string;
   description: string;
+  counts: number[]; // Adicionando a propriedade counts
 }
 
 // Interface para os dados do card
 interface CardProps {
   imageUrl: string;
   title: string;
+  count: number; // Adicionando a propriedade count
 }
 
 export function IgrejaPage() {
   const location = useLocation();
-  const { title, description } = (location.state as IgrejaPageProps) || { title: 'Default Title', description: 'Default Description' };
+  const { title, description, counts } = (location.state as IgrejaPageProps) || { title: 'Default Title', description: 'Default Description', counts: [0, 0, 0, 0, 0] };
 
-  // Exemplo de dados dos cards
+  // Exemplo de dados dos cards com a propriedade count
   const cards: CardProps[] = [
-    { imageUrl: colher, title: 'Alimentos' },
-    { imageUrl: guardaroupa, title: 'Roupas' },
-    { imageUrl: higiene, title: 'Materiais de Higiene' },
-    { imageUrl: profile, title: 'Voluntários' },
-    { imageUrl: water, title: 'Águas' }
+    { imageUrl: colher, title: 'Alimentos', count: counts[0] },
+    { imageUrl: guardaroupa, title: 'Roupas', count: counts[1] },
+    { imageUrl: higiene, title: 'Materiais de Higiene', count: counts[2] },
+    { imageUrl: profile, title: 'Voluntários', count: counts[3] },
+    { imageUrl: water, title: 'Águas', count: counts[4] }
   ];
 
   return (
-    <div>
-      <h1>{title}</h1>
-      <p>{description}</p>
+    <Container>
+      <Title>{title}</Title>
+      <Description>{description}</Description>
       
       {/* Renderizando os cards */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
+      <CardsContainer>
         {cards.map((card, index) => (
-          <div key={index} style={{ border: '1px solid #ddd', padding: '20px', textAlign: 'center' }}>
-            <img src={card.imageUrl} alt={card.title} style={{ width: '150px', height: '150px', objectFit: 'cover', marginBottom: '10px' }} />
-            <h3>{card.title}</h3>
-          </div>
+          <Card key={index} count={card.count}>
+            <CardImage src={card.imageUrl} alt={card.title} />
+            <CardTitle>{card.title}</CardTitle>
+          </Card>
         ))}
-      </div>
-    </div>
+      </CardsContainer>
+    </Container>
   );
 }
 
