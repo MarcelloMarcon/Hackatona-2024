@@ -34,7 +34,7 @@ export const Text = styled.p`
 export const LogoutButton = styled.button`
   background: none;
   border: none;
-  color: #888; /* Cor do ícone */
+  color: #fff; /* Cor do ícone */
   cursor: pointer;
   font-size: 1.5rem;
   display: flex;
@@ -42,6 +42,6 @@ export const LogoutButton = styled.button`
   margin-right: 30px;
 
   &:hover {
-    color: #fff; /* Altera a cor ao passar o mouse */
+    color: #888; /* Altera a cor ao passar o mouse */
   }
 `;

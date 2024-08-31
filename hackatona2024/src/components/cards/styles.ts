@@ -1,3 +1,4 @@
+// styles.ts
 import styled from 'styled-components';
 
 export const ButtonContainer = styled.button`
@@ -9,10 +10,11 @@ export const ButtonContainer = styled.button`
   border-radius: 8px;
   background-color: #f9f9f9;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, border 0.3s;
 
   &:hover {
     background-color: #e0e0e0;
+    border-width: 3px; /* Aumenta a borda ao passar o mouse */
   }
 
   &:focus {
@@ -26,7 +28,7 @@ export const Icon = styled.div`
   color: #333;
   display: flex;
   align-items: center;
-  margin-right: 8px; /* Ajuste para que o ícone fique colado ao título */
+  margin-right: 8px;
 `;
 
 export const TextContainer = styled.div`
@@ -45,5 +47,11 @@ export const Title = styled.h2`
 export const Subtitle = styled.p`
   margin: 4px 0 0;
   font-size: 14px;
+  color: #666;
+`;
+
+export const Description = styled.p`
+  margin: 4px 0 0;
+  font-size: 12px;
   color: #666;
 `;

@@ -7,14 +7,17 @@ import guardaroupa from '../../../assets/guarda-roupa.svg';
 import higiene from '../../../assets/artigos-de-higiene-pessoal.svg';
 import profile from '../../../assets/profile_16509786.svg';
 import water from '../../../assets/soft-drinks_4135327.svg';
-import { Container, Title, Description, CardsContainer, Card, CardImage, CardTitle, CardDescription, CardDescriptionTitle, CardDescriptionBody, BackButton } from './styles';
+import { Container, Title, Description, BackButton, AddressText, PhoneText } from './styles';
 import Header from '../../../components/header';
+import CardList from '../../../components/cardList';
 
-// Definindo uma interface para as props
+// Atualizando a interface para incluir endereço e telefone
 interface IgrejaPageProps {
   title: string;
   description: string;
   counts: number[];
+  address: string;  // Novo campo para endereço
+  phone: string;    // Novo campo para número de celular
 }
 
 // Interface para os dados do card
@@ -27,7 +30,13 @@ interface CardProps {
 export function IgrejaPage() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { title, description, counts } = (location.state as IgrejaPageProps) || { title: 'Default Title', description: 'Default Description', counts: [0, 0, 0, 0, 0] };
+  const { title, description, counts, address, phone } = (location.state as IgrejaPageProps) || {
+    title: 'Default Title',
+    description: 'Default Description',
+    counts: [0, 0, 0, 0, 0],
+    address: '',
+    phone: '',
+  };
 
   // Exemplo de dados dos cards com a propriedade count
   const cards: CardProps[] = [
@@ -46,56 +55,11 @@ export function IgrejaPage() {
       </BackButton>
       <Title>{title}</Title>
       <Description>{description}</Description>
+      <AddressText>Endereço: {address}</AddressText>
+      <PhoneText>Telefone: {phone}</PhoneText>
       
-      {/* Renderizando os cards */}
-      <CardsContainer>
-        {cards.map((card, index) => (
-          <Card key={index} count={card.count}>
-            <CardImage src={card.imageUrl} alt={card.title} />
-            <CardTitle>{card.title}</CardTitle>
-            {card.title === 'Alimentos' && (
-              <CardDescription>
-                <CardDescriptionTitle>Priorize alimentos não perecíveis</CardDescriptionTitle>
-                <CardDescriptionBody>
-                  Arroz<br />
-                  Feijão<br />
-                  Leite em pó<br />
-                  Óleo<br />
-                  Papinha para nenéns<br />
-                  Açúcar
-                </CardDescriptionBody>
-              </CardDescription>
-            )}
-            {card.title === 'Roupas' && (
-              <CardDescription>
-                <CardDescriptionTitle>Doe roupa em bom estado e em diversos tamanhos</CardDescriptionTitle>
-                <CardDescriptionBody>
-                  Casacos e jaquetas<br />
-                  Sapatos<br />
-                  Acessórios (cinto, bolsas, etc)<br />
-                  Calças<br />
-                  Camisetas<br />
-                  Roupas Infantis
-                </CardDescriptionBody>
-              </CardDescription>
-            )}
-            {card.title === 'Materiais de Higiene' && (
-              <CardDescription>
-                <CardDescriptionTitle>Doação não é descarte</CardDescriptionTitle>
-                <CardDescriptionBody>
-                  Sabonete<br />
-                  Pasta de dente<br />
-                  Escova de dente <br />
-                  Shampoo<br />
-                  Absorvente <br />
-                  Desodorante<br />
-                  Papel Higiênico
-                </CardDescriptionBody>
-              </CardDescription>
-            )}
-          </Card>
-        ))}
-      </CardsContainer>
+      {/* Usando o novo componente CardList */}
+      <CardList cards={cards} />
     </Container>
   );
 }
