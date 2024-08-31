@@ -24,25 +24,25 @@
       },
       {
         "id": 3,
-        "nome_abrigo": "xis",
-        "endereco": "Xis Salada",
-        "telefone": "O xis salada recheado com 180g de carne suculenta, queijo, alface, tomate.",
-        "precisa_voluntarios": 25.5,
-        "precisa_roupas": "https://i.imgur.com/CJj9pHh.jpeg",
-        "precisa_agua": "https://i.imgur.com/CJj9pHh.jpeg",
-        "precisa_prod_higiene": "https://i.imgur.com/CJj9pHh.jpeg",
-        "precisa_alimentos": "https://i.imgur.com/CJj9pHh.jpeg"
+        "nome_abrigo": "Paróquia Nossa Senhora de Lourdes",
+        "endereco": "Rua General Caldwell, 1022",
+        "telefone": "(51)9 9999-9999",
+        "precisa_voluntarios": 1,
+        "precisa_roupas": 0,
+        "precisa_agua": 0,
+        "precisa_prod_higiene": 1,
+        "precisa_alimentos": 0
       },
       {
         "id": 4,
-        "nome_abrigo": "xis",
-        "endereco": "Xis Salada",
-        "telefone": "O xis salada recheado com 180g de carne suculenta, queijo, alface, tomate.",
-        "precisa_voluntarios": 25.5,
-        "precisa_roupas": "https://i.imgur.com/CJj9pHh.jpeg",
-        "precisa_agua": "https://i.imgur.com/CJj9pHh.jpeg",
-        "precisa_prod_higiene": "https://i.imgur.com/CJj9pHh.jpeg",
-        "precisa_alimentos": "https://i.imgur.com/CJj9pHh.jpeg"
+        "nome_abrigo": "Centro Estadual de Treinamento Esportivo (CETE)",
+        "endereco": "Rua Gonçalves Dias, 700",
+        "telefone": "(51)9 9999-9999",
+        "precisa_voluntarios": 1,
+        "precisa_roupas": 0,
+        "precisa_agua": 0,
+        "precisa_prod_higiene": 1,
+        "precisa_alimentos": 0
       }
     ],
   
