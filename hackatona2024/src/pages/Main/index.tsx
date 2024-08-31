@@ -14,7 +14,11 @@ const Main = () => {
 
   // Função para navegação interna
   const handleNavigation = () => {
-    navigate('/initial');
+    if (cep.trim() === '') {
+      window.alert('Por favor, insira o seu CEP antes de continuar.');
+    } else {
+      navigate('/initial');
+    }
   };
 
   // Função para o botão "Não sei meu CEP" abrir uma nova guia
