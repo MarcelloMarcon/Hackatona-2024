@@ -25,12 +25,12 @@ const Main = () => {
         const { lat, lon } = data[0];
         return { lat: parseFloat(lat), lon: parseFloat(lon) };
       } else {
-        alert("CEP não encontrado. Tente novamente.");
+        alert("CEP não encontrado. Tente novamente."); // Alerta para CEP não encontrado
         return null;
       }
     } catch (error) {
       console.error("Erro ao buscar coordenadas:", error);
-      alert("Erro ao buscar coordenadas. Tente novamente.");
+      alert("Erro ao buscar coordenadas. Tente novamente."); // Alerta para erro na requisição
       return null;
     }
   };
@@ -39,6 +39,8 @@ const Main = () => {
   const handleNavigation = async () => {
     if (cep.trim() === '') {
       window.alert('Por favor, insira o seu CEP antes de continuar.');
+    } else if (cep.length < 9) { // Valida se o CEP tem menos de 9 caracteres (XXXXX-XXX)
+      window.alert('O CEP deve ter 8 dígitos.');
     } else {
       const coordinates = await fetchCoordinates(cep);
       if (coordinates) {
