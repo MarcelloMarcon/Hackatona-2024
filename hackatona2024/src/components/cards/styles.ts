@@ -30,7 +30,11 @@ export const Icon = styled.div`
   align-items: center;
   margin-right: 8px;
 `;
-
+export const DistanceText = styled.p`
+  font-size: 0.9rem;
+  color: 'black';  // Cor cinza para a distância
+  margin-top: 5px;
+`;
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;

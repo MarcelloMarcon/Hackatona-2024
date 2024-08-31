@@ -1,12 +1,15 @@
 // PageInitial.tsx
 import { Container, CardsContainer, MapContainer } from './styles';
 import { FaHome } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import AddressCard from '../../../components/cards';
 import Header from '../../../components/header';
+import { calculateDistance } from '../../../utils';
 
 export default function PageInitial() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const userCoordinates = location.state?.userCoordinates; // Coordenadas do usuário a partir do estado
 
   // Definindo dados de contagem, endereço, telefone e descrição para cada igreja
   const churches = [
@@ -14,10 +17,11 @@ export default function PageInitial() {
       title: 'Paróquia Santo Antônio do Partenon',
       description: 'Bem-vindo à Paróquia Santo Antônio do Partenon',
       subtitle: 'Rua Luiz de Camões, 35',
-      counts: [5, 20, 30, 50, 10], // Exemplo de contagens
-      address: 'Rua Luiz de Camões, 35', // Endereço adicionado
-      phone: '(51) 1234-5678', // Número de telefone adicionado
-      cardDescription: 'Este é um local histórico com uma comunidade vibrante.', // Nova descrição adicionada
+      counts: [5, 20, 30, 50, 10],
+      address: 'Rua Luiz de Camões, 35',
+      phone: '(51) 1234-5678',
+      cardDescription: 'Este é um local histórico com uma comunidade vibrante.',
+      coordinates: { lat: -30.0581612, lon: -51.2015326 } // Adiciona coordenadas para calcular a distância
     },
     {
       title: 'Igreja Brasa',
@@ -27,6 +31,7 @@ export default function PageInitial() {
       address: 'Av. Dr. Carlos Barbosa, 80',
       phone: '(51) 8765-4321',
       cardDescription: 'Um espaço acolhedor para todos.',
+      coordinates: { lat: -30.038, lon: -51.226 }
     },
     {
       title: 'Paróquia Nossa Senhora de Lourdes',
@@ -36,6 +41,7 @@ export default function PageInitial() {
       address: 'Rua General Caldwell, 1022',
       phone: '(51) 2345-6789',
       cardDescription: 'Conhecida por suas atividades sociais.',
+      coordinates: { lat: -30.0611547, lon: -51.2172564 }
     },
     {
       title: 'Centro Estadual de Treinamento Esportivo',
@@ -45,6 +51,8 @@ export default function PageInitial() {
       address: 'Rua Gonçalves Dias, 700',
       phone: '(51) 3456-7890',
       cardDescription: 'Facilidades esportivas e eventos comunitários.',
+      coordinates: { lat: -30.0563519, lon: -51.2196615 }
+
     },
   ];
 
@@ -65,16 +73,23 @@ export default function PageInitial() {
         ></iframe>
       </MapContainer>
       <CardsContainer>
-        {churches.map((church, index) => (
-          <AddressCard
-            key={index}
-            icon={<FaHome />}
-            title={church.title}
-            subtitle={church.subtitle}
-            description={church.cardDescription} // Passando a nova prop para o card
-            onClick={() => handleNavigation(church.title, church.description, church.counts, church.address, church.phone)}
-          />
-        ))}
+        {churches.map((church, index) => {
+          const distance = userCoordinates
+            ? calculateDistance(userCoordinates, church.coordinates)
+            : 'Desconhecida'; // Calcula a distância apenas se as coordenadas do usuário estão disponíveis
+
+          return (
+            <AddressCard
+              key={index}
+              icon={<FaHome />}
+              title={church.title}
+              subtitle={church.subtitle}
+              description={church.cardDescription}
+              distance={`${distance} km`} // Passando a distância calculada
+              onClick={() => handleNavigation(church.title, church.description, church.counts, church.address, church.phone)}
+            />
+          );
+        })}
       </CardsContainer>
     </Container>
   );
