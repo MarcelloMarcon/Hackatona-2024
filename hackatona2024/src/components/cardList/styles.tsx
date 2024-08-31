@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 // Função para determinar a cor de fundo com base no count
 const getBackgroundColor = (count: number) => {
-  if (count < 10) return '#F06263'; // Soft Red
-  if (count <= 30) return '#FFD180'; // Soft Orange
-  return '#81C784'; // Soft Green
+  if (count < 10) return 'rgb(199 50 51)'; // Soft Red
+  if (count <= 30) return 'rgb(243 178 62)'; // Soft Orange
+  return 'rgb(93 171 96)'; // Soft Green
 };
 
 // Mover a declaração de CardDescription antes da declaração de Card
